@@ -3,9 +3,9 @@ package data
 import "fmt"
 
 type Version struct {
-	Major int `json:"major,omitempty"`
-	Minor int `json:"minor,omitempty"`
-	Build int `json:"build,omitempty"`
+	Major int `json:"major"`
+	Minor int `json:"minor"`
+	Build int `json:"build"`
 }
 
 func (v *Version) String() string {

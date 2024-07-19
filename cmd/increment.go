@@ -20,7 +20,7 @@ var incrementCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("increment called")
-		field, _ := cmd.Flags().GetString("field")
+		field, _ := cmd.Flags().GetString("mode")
 		fileName, err := cmd.Flags().GetString("file")
 		utility.Check(err)
 		fmt.Printf("Opening version %s ...\n", fileName)
@@ -43,6 +43,6 @@ var incrementCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(incrementCmd)
 
-	incrementCmd.Flags().StringP("field", "f", "build", "field to increment")
+	incrementCmd.Flags().StringP("mode", "m", "build", "field to increment")
 	//incrementCmd.Flags().StringP("file", "f", "version.json", "file to increment")
 }
